@@ -15,7 +15,7 @@
 extern "C" {
 #endif
 
-void fft_bench(void);
+int fft_bench(void)
 
 #ifdef __cplusplus
 }

@@ -15,10 +15,10 @@ static float imagout[1024];
 static float Coeff[16];
 static float Amp[16];
 
-int old_main();
+int old_main(void);
     
 // main for benchmark purposes that does fft and inverse fft
-int fft_bench() {
+int fft_bench(void) {
     MAXSIZE = 128;
     old_main();
     invfft = 1;
@@ -27,7 +27,7 @@ int fft_bench() {
     return 0;
 }
 
-int old_main() {
+int old_main(void) {
 	unsigned i,j;
 	float *RealIn;
 	float *ImagIn;
@@ -83,15 +83,15 @@ int old_main() {
  /* regular*/
  fft_float (MAXSIZE,invfft,RealIn,ImagIn,RealOut,ImagOut);
  
- printf("RealOut:\n");
- for (i=0;i<MAXSIZE;i++)
-   printf("%f \t", RealOut[i]);
- printf("\n");
+//  printf("RealOut:\n");
+//  for (i=0;i<MAXSIZE;i++)
+//    printf("%f \t", RealOut[i]);
+//  printf("\n");
 
-printf("ImagOut:\n");
- for (i=0;i<MAXSIZE;i++)
-   printf("%f \t", ImagOut[i]);
-   printf("\n");
+// printf("ImagOut:\n");
+//  for (i=0;i<MAXSIZE;i++)
+//    printf("%f \t", ImagOut[i]);
+//    printf("\n");
 
 /* free(RealIn);
  free(ImagIn);
