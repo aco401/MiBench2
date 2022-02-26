@@ -51,6 +51,7 @@
 #include "../bareBench.h"
 #include "input.h"
 #include <ctype.h>
+#include "patricia_bench.h"
 
 struct in_addr {
     unsigned long s_addr;  // load with inet_aton()
@@ -161,7 +162,7 @@ struct MyNode {
 };
 
 int
-main()
+patricia_bench()
 {
 	struct ptree *phead;
 	struct ptree *p,*pfind;
@@ -267,8 +268,8 @@ main()
 		//if(pfind->p_key==(addr.s_addr&pfind->p_m->pm_mask))
 		if(pfind->p_key==addr.s_addr)
 		{
-			printf("%f %08x: ", time, addr.s_addr);
-			printf("Found.\n");
+			// printf("%f %08x: ", time, addr.s_addr);
+			// printf("Found.\n");
 		}
 		else
 		{
