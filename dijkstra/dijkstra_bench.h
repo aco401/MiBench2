@@ -7,17 +7,6 @@
  * directory for more details.
  */
 
-/**
- * @ingroup     drivers_bme680
- *
- * @{
- * @file
- * @brief       Default configuration for BME680 device driver
- *
- * @author      Dylan Laduranty <dylan.laduranty@mesotic.com>
- * @author      Gunar Schorcht <gunar@schorcht.net>
- */
-
 #ifndef MIBENCH2_DIJKSTRA
 #define MIBENCH2_DIJKSTRA
 
