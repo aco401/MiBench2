@@ -128,24 +128,24 @@ int dijkstra(int chStart, int chEnd)
     return 0;
 }
 
-int main(int argc, char *argv[])
-{
-    (void)argc;
-    (void)argv;
-    int i, j;
+// int main(int argc, char *argv[])
+// {
+//     (void)argc;
+//     (void)argv;
+//     int i, j;
 
-    /* initLED();
-       LED(1); */
-    /* make a fully connected matrix */
-    // see input.h
-    /* finds 10 shortest paths between nodes */
-    for (i = 0, j = NUM_NODES / 2; i < NUM_NODES; i++, j++) {
-        j = j % NUM_NODES;
-        dijkstra(i, j);
-    }
-    /* LED(1); */
-    return 0;
-}
+//     /* initLED();
+//        LED(1); */
+//     /* make a fully connected matrix */
+//     // see input.h
+//     /* finds 10 shortest paths between nodes */
+//     for (i = 0, j = NUM_NODES / 2; i < NUM_NODES; i++, j++) {
+//         j = j % NUM_NODES;
+//         dijkstra(i, j);
+//     }
+//     /* LED(1); */
+//     return 0;
+// }
 
 void dijkstra_bench(void)
 {
