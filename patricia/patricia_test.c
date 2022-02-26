@@ -56,9 +56,9 @@
 struct in_addr {
     unsigned long s_addr;  // load with inet_aton()
 };
-
-int isascii(char c) { return 1;}
-
+;
+/* int isascii(char c) { return 1;}
+ */
 unsigned int htonl(unsigned int x)
 {
     return x;
@@ -162,7 +162,7 @@ struct MyNode {
 };
 
 int
-patricia_bench()
+patricia_bench(void)
 {
 	struct ptree *phead;
 	struct ptree *p,*pfind;
