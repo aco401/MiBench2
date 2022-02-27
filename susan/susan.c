@@ -303,6 +303,7 @@ typedef float      TOTAL_TYPE; /* for my PowerPC accelerator only */
 #include <math.h>
 #include "../bareBench.h"
 #include "input_small.h"
+#include "susan_bench.h"
 
 int argc = 4;
 char *argv[] = {"susan", "input.pgm", "output.pgm", "-s"};
@@ -1919,7 +1920,7 @@ if(n==MAX_CORNERS){
 corner_list[n].info=7;
 }
 
-int main() {
+int susan_bench() {
 /* {{{ vars */
 char   *tcp;
 uchar  *in, *bp, *mid;
@@ -2003,7 +2004,9 @@ CORNER_LIST corner_list;;
   {
     case 0:
       /* {{{ smoothing */
+      #ifdef BENCH_VERBOSE
           puts("smoothing\n");
+      #endif
       setup_brightness_lut(&bp,bt,2);
       susan_smoothing(three_by_three,in,dt,x_size,y_size,bp);
       break;
@@ -2011,7 +2014,9 @@ CORNER_LIST corner_list;;
 /* }}} */
     case 1:
       /* {{{ edges */
+      #ifdef BENCH_VERBOSE
           puts("edges\n");
+      #endif
       r   = (int *) malloc(x_size * y_size * sizeof(int));
       setup_brightness_lut(&bp,bt,6);
 
@@ -2042,7 +2047,9 @@ CORNER_LIST corner_list;;
 /* }}} */
     case 2:
       /* {{{ corners */
+      #ifdef BENCH_VERBOSE
           puts("corners\n");
+      #endif
       r   = (int *) malloc(x_size * y_size * sizeof(int));
       setup_brightness_lut(&bp,bt,6);
 

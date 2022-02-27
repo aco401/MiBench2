@@ -32,6 +32,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "rsa.h"
+#include "rsa_bench.h"
 
 /*
  * generate a public key and exponent suitable for RSA encryption like this:
@@ -640,7 +641,7 @@ void test_rsa_encrypt(){
     mod_exp(ciphertext, plaintext, e, 1, n, KEYLEN);
 }
 
-int main (void) {
+int rsa_bench (void) {
     /* see above comment about generating these */
     n[0] = 0xab78; n[1] = 0xafba; n[2] = 0x88e7; n[3] = 0x496d;
     e[0] = 0x0001; e[1] = 0x0001; // e = 65537
@@ -650,16 +651,18 @@ int main (void) {
     plaintext[2] = 0x6e74; // nt
     plaintext[3] = 0x6f73; // os
 
+
+    #ifdef BENCH_VERBOSE
     int cnt;
     printf("Plaintext:\n\r");
     for(cnt = 0; cnt < KEYLEN; ++cnt)
       printf("0x%08X\n\r", plaintext[cnt]);
-
+    #endif
     test_rsa_encrypt();
-
+    #ifdef BENCH_VERBOSE
     printf("Cipertext:\n\r");
     for(cnt = 0; cnt < KEYLEN; ++cnt)
       printf("0x%08X\n\r", ciphertext[cnt]);
-
+    #endif
     return 11;
 }

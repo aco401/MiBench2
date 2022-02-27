@@ -27,16 +27,20 @@ int compare(const void *elem1, const void *elem2)
 
 
 int
-main(void) {
+qsort_bench(void) {
   int i,count=0;
 
   for(count = 0; count < sizeof(array)/sizeof(struct my3DVertexStruct); ++count)
 	 array[count].distance = sqrt(pow(array[count].x, 2) + pow(array[count].y, 2) + pow(array[count].z, 2));
   
+  #ifdef BENCH_VERBOSE
   printf("\nSorting %d vectors based on distance from the origin.\n\n",count);
+  #endif
   qsort(array,count,sizeof(struct my3DVertexStruct),compare);
   
+  #ifdef BENCH_VERBOSE
   for(i=0;i<count;i++)
     printf("%d %d %d\n", array[i].x, array[i].y, array[i].z);
+  #endif
   return 0;
 }

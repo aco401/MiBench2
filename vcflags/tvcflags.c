@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "vcflags_bench.h"
 
 void PUT32 ( unsigned int, unsigned int );
 
@@ -41,7 +42,7 @@ void sub_test ( unsigned int ra, unsigned int rb )
     PUT32(UART_BASE,rd&0x30000000);
 }
 
-int main ( void )
+int vcflags_bench ( void )
 {
     unsigned int ra,rb;
 

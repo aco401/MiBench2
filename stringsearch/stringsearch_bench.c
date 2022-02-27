@@ -16,6 +16,7 @@
 #include <string.h>
 #include <limits.h>
 #include "../bareBench.h"
+#include "stringsearch_bench.h"
 
 static size_t table[UCHAR_MAX + 1];
 static size_t len;
@@ -70,7 +71,7 @@ char *strsearch(const char *string)
 
 #include <stdio.h>
 
-int main()
+int stringsearch_bench()
 {
       char *here;
       char *find_strings[] = { "Kur",
@@ -1701,11 +1702,13 @@ NULL};
       {
             init_search(find_strings[i]);
             here = strsearch(search_strings[i]);
+            #ifdef BENCH_VERBOSE
             printf("\"%s\" is%s in \"%s\"", find_strings[i],
                   here ? "" : " not", search_strings[i]);
             if (here)
                   printf(" [\"%s\"]", here);
             printf("\n");
+            #endif
       }
       }
 
