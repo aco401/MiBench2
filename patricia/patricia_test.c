@@ -56,7 +56,7 @@
 struct in_addr {
     unsigned long s_addr;  // load with inet_aton()
 };
-;
+
 /* int isascii(char c) { return 1;}
  */
 unsigned int htonl(unsigned int x)
