@@ -155,4 +155,5 @@ int dijkstra_bench(void)
         j = j % NUM_NODES;
         dijkstra(i, j);
     }
+    return 0;
 }
