@@ -21,4 +21,4 @@ int crc_bench(void);
 }
 #endif
 
-#endif /* MIBENCH2_FFT */
+#endif /* MIBENCH2_CRC */
