@@ -3,7 +3,7 @@ struct input_data_format {
     char addr[26];
 };
 
-#ifdef MIBENCH2_PATRICIA_INPUT_LARGE
+#ifndef MIBENCH2_PATRICIA_INPUT_SMALL
 struct input_data_format input_data[] = {
 {759794400.242680, "1 2 53 53"},
 {0.245680, "2 1 53 53"},
