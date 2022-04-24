@@ -47,6 +47,8 @@ int bitcount_bench(void)
     "Non-recursive bit count by bytes (AR)",
     "Shift and count bits"
   };
+  #else
+  (void) cminix, cmaxix;
   #endif
 
   iterations=1125000;
@@ -86,7 +88,7 @@ static int CDECL bit_shifter(long int x)
 {
   int i, n;
   
-  for (i = n = 0; x && (i < (sizeof(long) * CHAR_BIT)); ++i, x >>= 1)
+  for (i = n = 0; x && (i < (int)(sizeof(long) * CHAR_BIT)); ++i, x >>= 1)
     n += (int)(x & 1L);
   return n;
 }

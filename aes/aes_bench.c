@@ -97,12 +97,16 @@ static void test_encrypt_ecb(void)
 
   if(0 == strncmp((char*) out, (char*) buffer, 16))
   {
-    LED(1);
+    #ifdef LOG_DEBUG
+LED(1);
+#endif
     //printf("SUCCESS!\n");
   }
   else
   {
-    LED(0);
+    #ifdef LOG_DEBUG
+LED(0);
+#endif
     //printf("FAILURE!\n");
   }
 }
@@ -132,12 +136,16 @@ static void test_decrypt_cbc(void)
 
   if(0 == strncmp((char*) out, (char*) buffer, 64))
   {
-    LED(1);
+    #ifdef LOG_DEBUG
+LED(1);
+#endif
     //printf("SUCCESS!\n");
   }
   else
   {
-    LED(0);
+    #ifdef LOG_DEBUG
+LED(0);
+#endif
     //printf("FAILURE!\n");
   }
 }
@@ -162,12 +170,16 @@ static void test_encrypt_cbc(void)
 
   if(0 == strncmp((char*) out, (char*) buffer, 64))
   {
-    LED(1);
+    #ifdef LOG_DEBUG
+LED(1);
+#endif
     //printf("SUCCESS!\n");
   }
   else
   {
-    LED(0);
+    #ifdef LOG_DEBUG
+LED(0);
+#endif
     //printf("FAILURE!\n");
   }
 }
@@ -186,12 +198,16 @@ static void test_decrypt_ecb(void)
 
   if(0 == strncmp((char*) out, (char*) buffer, 16))
   {
-    LED(1);
+    #ifdef LOG_DEBUG
+LED(1);
+#endif
     //printf("SUCCESS!\n");
   }
   else
   {
-    LED(0);
+    #ifdef LOG_DEBUG
+LED(0);
+#endif
     //printf("FAILURE!\n");
   }
 }
