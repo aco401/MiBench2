@@ -1,6 +1,6 @@
 /* testc - Test adpcm coder */
 
-#include "adpcm.h"
+#include "../adpcm/adpcm.h"
 #include <stdio.h>
 #include "../bareBench.h"
 #include "input.h"

@@ -1,6 +1,6 @@
 /* testd - Test adpcm decoder */
 
-#include "adpcm.h"
+#include "../adpcm/adpcm.h"
 #include <stdio.h>
 #include "../bareBench.h"
 #include "input.h"
