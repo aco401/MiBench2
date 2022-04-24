@@ -20,7 +20,7 @@
 
 
 int
-main(void)
+crc_bench(void)
 {
 	unsigned char  test[] = "123456789";
 
@@ -28,19 +28,23 @@ main(void)
 	/*
 	 * Print the check value for the selected CRC algorithm.
 	 */
+	#ifdef LOG_DEBUG
 	printf("The check value for the %s standard is 0x%X\n", CRC_NAME, CHECK_VALUE);
 	
 	/*
 	 * Compute the CRC of the test message, slowly.
 	 */
 	printf("The crcSlow() of \"123456789\" is 0x%X\n", crcSlow(test, strlen(test)));
+	#endif
   crcSlow(test,9);
 	
 	/*
 	 * Compute the CRC of the test message, more efficiently.
 	 */
 	crcInit();
+	#ifdef LOG_DEBUG
 	printf("The crcFast() of \"123456789\" is 0x%X\n", crcFast(test, strlen(test)));
+	#endif
   crcFast(test,9);
 
   return 0;
