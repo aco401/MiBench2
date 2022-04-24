@@ -6,7 +6,9 @@
 #include <time.h>
 #include "../bareBench.h"
 #include "sha.h"
-#include "input.h"
+//#include "input.h"
+
+char inputString[] = "ThisISAShortInputString";
 
 int sha_bench()
 {
