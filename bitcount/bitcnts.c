@@ -36,6 +36,7 @@ int bitcount_bench(void)
     AR_btbl_bitcount,
     bit_shifter
   };
+  #ifdef LOG_DEBUG
   static char *text[FUNCS] = {
     "Optimized 1 bit/loop counter",
     "Ratko's mystery algorithm",
@@ -46,6 +47,7 @@ int bitcount_bench(void)
     "Non-recursive bit count by bytes (AR)",
     "Shift and count bits"
   };
+  #endif
 
   iterations=1125000;
   
