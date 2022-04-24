@@ -19,7 +19,7 @@
 
 static int CDECL bit_shifter(long int x);
 
-int main(void)
+int bitcount_bench(void)
 {
   clock_t start, stop;
   double ct, cmin = DBL_MAX, cmax = 0;
@@ -49,7 +49,9 @@ int main(void)
 
   iterations=1125000;
   
+  #ifdef LOG_DEBUG
   puts("Bit counter algorithm benchmark\n");
+  #endif
   
   for (i = 0; i < FUNCS; i++) {
     start = clock();
@@ -67,11 +69,14 @@ int main(void)
 	 cmax = ct;
 	 cmaxix = i;
     }
-    
+    #ifdef LOG_DEBUG
     printf("%-38s> Time: %7.3f sec.; Bits: %ld\n", text[i], ct, n);
+    #endif
   }
+  #ifdef LOG_DEBUG
   printf("\nBest  > %s\n", text[cminix]);
   printf("Worst > %s\n", text[cmaxix]);
+  #endif
   return 0;
 }
 
