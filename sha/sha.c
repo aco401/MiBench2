@@ -189,7 +189,7 @@ void sha_final(SHA_INFO *sha_info)
 #ifndef MIBENCH2_PATRICIA_BLOCK_SIZE
 #define BLOCK_SIZE	8192
 #else
-#define BLOCK_SIZE  64
+#define BLOCK_SIZE  MIBENCH2_PATRICIA_BLOCK_SIZE
 #endif
 
 void sha_stream(SHA_INFO *sha_info, char *fin)
