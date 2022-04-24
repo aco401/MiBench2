@@ -146,7 +146,7 @@ int dijkstra(int chStart, int chEnd)
 //     return 0;
 // }
 
-void dijkstra_bench(void)
+int dijkstra_bench(void)
 {
 
     int i, j;

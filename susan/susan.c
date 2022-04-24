@@ -1920,7 +1920,7 @@ if(n==MAX_CORNERS){
 corner_list[n].info=7;
 }
 
-int susan_bench() {
+int susan_bench(void) {
 /* {{{ vars */
 char   *tcp;
 uchar  *in, *bp, *mid;
