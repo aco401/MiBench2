@@ -70,6 +70,8 @@ char *strsearch(const char *string)
 
 #include <stdio.h>
 
+#ifndef MIBENCH2_STRINGSEARCH_SMALL_INPUT
+
 int stringsearch_bench()
 {
       char *here;
@@ -359,6 +361,50 @@ int stringsearch_bench()
 "xxx",
 "Th",
 NULL};
+
+#else
+
+int stringsearch_bench()
+{
+      char *here;
+      char *find_strings[] = { "Kur",
+"gent",
+"lass",
+"suns",
+"for",
+"xxx",
+"long",
+"have",
+"where",
+"xxxxxx",
+"xxxxxx",
+"pense",
+"pow",
+"xxxxx",
+"Yo",
+"and",
+"faded",
+"20",
+"you",
+"bac",
+"an",
+"way",
+"possibili",
+"an",
+"fat",
+"imag",
+"th",
+"wor",
+"xxx",
+"xxx",
+"yo",
+"bxx",
+"wo",
+"kind"
+      }
+#endif
+
+#ifndef MIBENCH2_STRINGSEARCH_SMALL_INPUT
       char *search_strings[] = { "Kurt Vonneguts Commencement Address at",
 "MIT Ladies and gentlemen of",
 "the class of 97 Wear",
@@ -1692,6 +1738,58 @@ NULL};
 "and recycling it for more than its",
 "worth But trust me on the sunscreen"
 };
+#else
+ char *search_strings[] = { "Kurt Vonneguts Commencement Address at",
+"MIT Ladies and gentlemen of",
+"the class of 97 Wear",
+"sunscreen If I could offer",
+"you only one tip for",
+"the future sunscreen would be",
+"it The longterm benefits of",
+"sunscreen have been proved by",
+"scientists whereas the rest of",
+"my advice has no basis",
+"more reliable than my own meandering experience",
+"I will dispense this advice",
+"now Enjoy the power and beauty",
+"of your youth Oh never mind",
+"You will not understand the power",
+"and beauty of your youth until theyve",
+"faded But trust me in",
+"20 years",
+"youll look",
+"back at photos of yourself",
+"and recall in a",
+"way you cant grasp now how much",
+"possibility lay before you",
+"and how fabulous you really looked You",
+"are not as fat",
+"as you imagine Dont worry about",
+"the future Or",
+"worry but know that worrying is as effective",
+"as trying to solve an algebra equation",
+"by chewing bubble gum The real troubles in",
+"your life are apt to",
+"be things that never crossed your",
+"worried mind the",
+"kind that blindside you at",
+"4 pm on some",
+"idle Tuesday",
+"Do one thing every day that",
+"scares you Sing Dont be reckless with other",
+"peoples hearts Dont put up",
+"with people who are reckless",
+"with yours Floss Dont waste your time",
+"on jealousy Sometimes youre ahead sometimes youre behind",
+"The race is long and in",
+"the end its only with",
+"yourself Remember compliments you receive",
+"Forget the insults If you",
+"succeed in doing this tell me how",
+"Keep your old"
+ }
+#endif
+
       int i;
       int y;
 
