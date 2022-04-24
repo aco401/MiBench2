@@ -10922,4 +10922,4 @@ struct input_data_format input_data[] = {
 
 #endif
 
-struct input_data_format * fakeFile;
+struct input_data_format * fakeFile_patricia;

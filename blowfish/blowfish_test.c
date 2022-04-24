@@ -49,8 +49,8 @@ int blowfish_bench(void) {
   #endif
   Blowfish_Init (&ctx, KEY, sizeof(KEY));
 
-  unsigned long * plaintextPtr = (unsigned long *)test_data;
-  while(plaintextPtr < (unsigned long *)(test_data + sizeof(test_data))) {
+  unsigned long * plaintextPtr = (unsigned long *)test_data_blowfish;
+  while(plaintextPtr < (unsigned long *)(test_data_blowfish + sizeof(test_data_blowfish))) {
       Blowfish_Encrypt(&ctx, &plaintextPtr[0], &plaintextPtr[1]);
       #ifdef LOG_DEBUG
       printf("%08lX %08lX\n", plaintextPtr[0], plaintextPtr[1]);
@@ -62,8 +62,8 @@ int blowfish_bench(void) {
   #endif
   Blowfish_Init (&ctx, KEY, sizeof(KEY));
     
-  plaintextPtr = (unsigned long *)test_data;
-  while(plaintextPtr < (unsigned long *)(test_data + sizeof(test_data))) {
+  plaintextPtr = (unsigned long *)test_data_blowfish;
+  while(plaintextPtr < (unsigned long *)(test_data_blowfish + sizeof(test_data_blowfish))) {
       Blowfish_Decrypt(&ctx, &plaintextPtr[0], &plaintextPtr[1]);
       #ifdef LOG_DEBUG
       printf("%08lX %08lX\n", plaintextPtr[0], plaintextPtr[1]);

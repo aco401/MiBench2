@@ -1940,7 +1940,7 @@ int    *r,
 CORNER_LIST corner_list;;
 
 /* }}} */
-  fakeFile = test_data;
+  fakeFile = test_data_susan;
 
   get_image(&in,&x_size,&y_size);
 

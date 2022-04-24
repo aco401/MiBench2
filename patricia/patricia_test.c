@@ -212,15 +212,15 @@ patricia_bench(void)
 	/*
 	 * The main loop to insert nodes.
 	 */
-    fakeFile = input_data;
-	while (fakeFile < (input_data + sizeof(input_data)/sizeof(struct input_data_format))) {
+    fakeFile_patricia = input_data;
+	while (fakeFile_patricia < (input_data + sizeof(input_data)/sizeof(struct input_data_format))) {
 		/*
 		 * Read in each IP address and mask and convert them to
 		 * more usable formats.
 		 */
-        time = fakeFile->time;
-        inet_aton(fakeFile->addr, &addr);
-        ++fakeFile;
+        time = fakeFile_patricia->time;
+        inet_aton(fakeFile_patricia->addr, &addr);
+        ++fakeFile_patricia;
         
 		/*
 		 * Create a Patricia trie node to insert.
