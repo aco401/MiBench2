@@ -304,7 +304,6 @@ typedef float      TOTAL_TYPE; /* for my PowerPC accelerator only */
 #include <math.h>
 #include "../bareBench.h"
 #include "input_small.h"
-#include "susan_bench.h"
 
 int argc = 4;
 char *argv[] = {"susan", "input.pgm", "output.pgm", "-s"};

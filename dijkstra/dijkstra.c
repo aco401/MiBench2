@@ -2,7 +2,6 @@
 #include "../bareBench.h"
 #include "input.h"
 #include <stdio.h>
-#include "dijkstra_bench.h"
 
 #define NUM_NODES                          100
 #define NONE                               9999

@@ -7,7 +7,6 @@
 #include "../bareBench.h"
 #include "sha.h"
 #include "input.h"
-#include "sha_bench.h"
 
 int sha_bench()
 {

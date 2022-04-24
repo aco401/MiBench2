@@ -32,7 +32,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include "rsa.h"
-#include "rsa_bench.h"
 
 /*
  * generate a public key and exponent suitable for RSA encryption like this:

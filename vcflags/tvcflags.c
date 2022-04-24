@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "vcflags_bench.h"
 
 void PUT32 ( unsigned int, unsigned int );
 

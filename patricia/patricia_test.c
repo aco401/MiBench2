@@ -51,7 +51,6 @@
 #include "../bareBench.h"
 #include "input.h"
 #include <ctype.h>
-#include "patricia_bench.h"
 
 struct in_addr {
     unsigned long s_addr;  // load with inet_aton()

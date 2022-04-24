@@ -16,7 +16,6 @@
 #include <string.h>
 #include <limits.h>
 #include "../bareBench.h"
-#include "stringsearch_bench.h"
 
 static size_t table[UCHAR_MAX + 1];
 static size_t len;

@@ -3,7 +3,6 @@
 #include <math.h>
 #include "fourier.h"
 #include "../bareBench.h"
-#include "fft_bench.h"
 
 int invfft=0;
 unsigned MAXSIZE; // small 4096, 8192 inverse, 512 for memory-limited systems
