@@ -4,6 +4,9 @@
 ** Version 1.0, 7-Jul-92.
 */
 
+#ifndef ADPCM__H
+#define ADPCM__H
+
 struct adpcm_state {
     short	valprev;	/* Previous output value */
     char	index;		/* Index into stepsize table */
@@ -17,3 +20,5 @@ struct adpcm_state {
 
 void adpcm_coder ARGS((unsigned char [], char [], int, struct adpcm_state *));
 void adpcm_decoder ARGS((unsigned char [], short [], int, struct adpcm_state *));
+
+#endif
