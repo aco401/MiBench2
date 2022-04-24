@@ -12,7 +12,7 @@
 
 short	sbuf[NSAMPLES];
 
-int adpcm_decode_bench() {
+int adpcm_decode_bench(void) {
     struct adpcm_state state = {};
     int n = 0;
     unsigned char * currentN = test_data;

@@ -12,7 +12,7 @@
 
 char	abuf[NSAMPLES/2];
 
-int adpcm_encode_bench() {
+int adpcm_encode_bench(void) {
     struct adpcm_state state = {};
     int n = 0;
     unsigned char * currentN = test_data;
