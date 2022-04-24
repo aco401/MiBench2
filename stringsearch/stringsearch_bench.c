@@ -401,7 +401,7 @@ int stringsearch_bench()
 "bxx",
 "wo",
 "kind"
-      }
+      };
 #endif
 
 #ifndef MIBENCH2_STRINGSEARCH_SMALL_INPUT
@@ -1787,7 +1787,7 @@ int stringsearch_bench()
 "Forget the insults If you",
 "succeed in doing this tell me how",
 "Keep your old"
- }
+ };
 #endif
 
       int i;
