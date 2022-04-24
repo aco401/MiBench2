@@ -1,4 +1,4 @@
-#ifndef MIBENCH2_SUSAN_SMALL_INPUT
+#ifndef MIBENCH2_SUSAN_INPUT_SMALL
 unsigned char test_data_susan[]=
 {
   0x50,0x35,0x0A,0x23,0x20,0x43,0x52,0x45,

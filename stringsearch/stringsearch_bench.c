@@ -70,7 +70,7 @@ char *strsearch(const char *string)
 
 #include <stdio.h>
 
-#ifndef MIBENCH2_STRINGSEARCH_SMALL_INPUT
+#ifndef MIBENCH2_STRINGSEARCH_INPUT_SMALL
 
 int stringsearch_bench()
 {
@@ -404,7 +404,7 @@ int stringsearch_bench()
       };
 #endif
 
-#ifndef MIBENCH2_STRINGSEARCH_SMALL_INPUT
+#ifndef MIBENCH2_STRINGSEARCH_INPUT_SMALL
       char *search_strings[] = { "Kurt Vonneguts Commencement Address at",
 "MIT Ladies and gentlemen of",
 "the class of 97 Wear",

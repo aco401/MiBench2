@@ -1,4 +1,4 @@
-#ifndef MIBENCH2_ADPCM_DECODE_SMALL_INPUT
+#ifndef MIBENCH2_ADPCM_DECODE_INPUT_SMALL
 unsigned char test_data_decode[]=
 {
   0x00,0xF2,0x0F,0x38,0xF7,0x9F,0x79,0xB0,
