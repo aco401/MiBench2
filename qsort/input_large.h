@@ -3,6 +3,7 @@ struct my3DVertexStruct {
     double distance;
 };
 
+#ifdef MIBENCH2_QSORT_INPULARGE
 struct my3DVertexStruct array[] =  {\
   {1681692777, 846930886, 1804289383}, \
   {424238335, 1957747793, 1714636915}, \
@@ -11245,3 +11246,10 @@ struct my3DVertexStruct array[] =  {\
   {1369005025, 449159643, 49183007}, \
   {2048030805, 1336768105, 494297591}, \
 };
+#else
+struct my3DVertexStruct array[] =  {\
+  {1681692777, 846930886, 1804289383}, \
+  {424238335, 1957747793, 1714636915}, \
+  {596516649, 1649760492, 719885386}, \
+}
+#endif
