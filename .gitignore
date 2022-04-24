@@ -31,3 +31,8 @@
 # Debug files
 *.dSYM/
 *.su
+.vscode/configurationCache.log
+.gitignore
+.vscode/dryrun.log
+.vscode/settings.json
+.vscode/targets.log
