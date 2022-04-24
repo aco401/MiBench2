@@ -12,13 +12,15 @@
 
 char	abuf[NSAMPLES/2];
 
-int main() {
+int adpcm_encode_bench() {
     struct adpcm_state state = {};
     int n = 0;
     unsigned char * currentN = test_data;
     int maxN = sizeof(test_data);
     
+    #ifdef LOG_DEBUG
     printf("Initial valprev=%d, index=%d\n", state.valprev, state.index);
+    #endif
 
     while(1) {
         int bytesIntoRead = ((unsigned int)currentN) - ((unsigned int)test_data);
@@ -32,6 +34,8 @@ int main() {
         //write(1, abuf, n/4);
     }
     
+    #ifdef LOG_DEBUG
     printf("Final valprev=%d, index=%d\n", state.valprev, state.index);
+    #endif
     return 0;
 }
