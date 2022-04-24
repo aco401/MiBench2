@@ -186,7 +186,11 @@ void sha_final(SHA_INFO *sha_info)
 
 /* compute the SHA digest of a FILE stream */
 
+#ifndef MIBENCH2_PATRICIA_BLOCK_SIZE
 #define BLOCK_SIZE	8192
+#else
+#define BLOCK_SIZE  64
+#endif
 
 void sha_stream(SHA_INFO *sha_info, char *fin)
 {
