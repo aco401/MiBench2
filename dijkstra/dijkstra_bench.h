@@ -10,7 +10,7 @@
 extern "C" {
 #endif
 
-void dijkstra_bench(void);
+int dijkstra_bench(void);
 
 #ifdef __cplusplus
 }
