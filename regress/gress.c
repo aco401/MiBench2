@@ -15,7 +15,7 @@ void hexstring ( unsigned int d );
 #endif
 
 //------------------------------------------------------------------------
-unsigned int prand32 ( unsigned int x )
+static unsigned int prand32 ( unsigned int x )
 {
     if(x&1)
     {
