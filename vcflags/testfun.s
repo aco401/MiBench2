@@ -1,4 +1,15 @@
 .thumb_func
+returnvcflags:
+    @swi 0xCC
+    @bx lr
+
+    bvc 1f
+    bcc 2f
+    ;@ v set   c set
+    mov r0,#3
+    lsl r0,#28
+    bx lr
+.thumb_func
 .globl testfun1
 testfun1:
     ;@ clear carry flag
@@ -30,3 +41,4 @@ testfun4:
     ror r2,r2
     sbc r0,r1
     b returnvcflags
+.end
