@@ -38,16 +38,18 @@ void add_test ( unsigned int ra, unsigned int rb )
 
 void sub_test ( unsigned int ra, unsigned int rb )
 {
-    unsigned int rc,rd;
+
     #ifdef LOG_DEBUG
+    unsigned int rc,rd;
     PUT32(UART_BASE,ra);
     PUT32(UART_BASE,rb);
-    #endif
     rc=testfun3(ra,rb);
     rd=testfun4(ra,rb);
-    #ifdef LOG_DEBUG
     PUT32(UART_BASE,rc&0x30000000);
     PUT32(UART_BASE,rd&0x30000000);
+    #else
+    testfun3(ra,rb);
+    testfun4(ra,rb);
     #endif
 }
 
