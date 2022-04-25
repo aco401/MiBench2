@@ -60,6 +60,7 @@ static void test_encrypt_ecb_verbose(void)
     memset(buf, 0, 64);
     memset(buf2, 0, 64);
 
+    #ifdef LOG_DEBUG
     // print text to encrypt, key and IV
     printf("ECB encrypt verbose:\n\n");
     printf("plain text:\n");
@@ -75,12 +76,17 @@ static void test_encrypt_ecb_verbose(void)
 
     // print the resulting cipher as 4 x 16 byte strings
     printf("ciphertext:\n");
+    #endif
     for(i = 0; i < 4; ++i)
     {
         AES128_ECB_encrypt(plain_text + (i*16), key, buf+(i*16));
+        #ifdef LOG_DEBUG
         phex(buf + (i*16));
+        #endif
     }
+    #ifdef LOG_DEBUG
     printf("\n");
+    #endif
 }
 
 
@@ -92,8 +98,9 @@ static void test_encrypt_ecb(void)
   uint8_t buffer[16];
 
   AES128_ECB_encrypt(in, key, buffer);
-
+  #ifdef LOG_DEBUG
   printf("ECB decrypt: ");
+  #endif
 
   if(0 == strncmp((char*) out, (char*) buffer, 16))
   {
@@ -131,8 +138,9 @@ static void test_decrypt_cbc(void)
   AES128_CBC_decrypt_buffer(buffer+16, in+16, 16, 0, 0);
   AES128_CBC_decrypt_buffer(buffer+32, in+32, 16, 0, 0);
   AES128_CBC_decrypt_buffer(buffer+48, in+48, 16, 0, 0);
-
+  #ifdef LOG_DEBUG
   printf("CBC decrypt: ");
+  #endif
 
   if(0 == strncmp((char*) out, (char*) buffer, 64))
   {
@@ -165,8 +173,9 @@ static void test_encrypt_cbc(void)
   uint8_t buffer[64];
 
   AES128_CBC_encrypt_buffer(buffer, in, 64, key, iv);
-
+  #ifdef LOG_DEBUG
   printf("CBC encrypt: ");
+  #endif
 
   if(0 == strncmp((char*) out, (char*) buffer, 64))
   {
@@ -193,8 +202,9 @@ static void test_decrypt_ecb(void)
   uint8_t buffer[16];
 
   AES128_ECB_decrypt(in, key, buffer);
-
+  #ifdef LOG_DEBUG
   printf("ECB decrypt: ");
+  #endif
 
   if(0 == strncmp((char*) out, (char*) buffer, 16))
   {
