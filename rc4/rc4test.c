@@ -3,10 +3,11 @@
 //-------------------------------------------------------------------
 
 #include "testdata.h"
-
+#ifdef LOG_DEBUG
 void hexstring ( unsigned int d ); //printf("%08X\n");
 void hexstrings ( unsigned int d ); //printf("%08X ");
 void hexstringcr ( unsigned int d ); //printf("%08X\r");
+#endif
 
 void *memcpy(void *str1, const void *str2, unsigned int n)
 {
@@ -127,8 +128,9 @@ int run_tea_test ( void )
     };
 
     ArcfourContext mycontext;
-
+    #ifdef LOG_DEBUG
     hexstring(0x12345678);
+    #endif
 
     errors=0;
 
@@ -151,18 +153,25 @@ int run_tea_test ( void )
         if(udata[ra]!=testdata[ra])
         {
             errors++;
+            #ifdef LOG_DEBUG
             hexstrings(ra); hexstrings(udata[ra]); hexstring(testdata[ra]);
+            #endif
         }
         if(errors>20) break;
     }
+    #ifdef LOG_DEBUG
     hexstring(errors);
+    #endif
     if(errors)
     {
+        #ifdef LOG_DEBUG
         hexstring(0xBADBAD99);
+        #endif
         return(1);
     }
-
+    #ifdef LOG_DEBUG
     hexstring(0x12345678);
+    #endif
     return(0);
 }
 

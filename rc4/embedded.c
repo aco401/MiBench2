@@ -61,9 +61,11 @@ void hexstringcr ( unsigned int d )
     uart_send(0x20);
 }
 
-int main ( void )
+int rc4_bench ( void )
 {
+    #ifdef LOG_DEBUG
     uart_init();
+    #endif
     run_tea_test();
     return(0);
 }
