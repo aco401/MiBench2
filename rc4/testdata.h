@@ -1,4 +1,4 @@
-#ifndef MIBENCH2_SUSAN_INPUT_SMALL
+#ifndef MIBENCH2_RC4_INPUT_SMALL
 #define TESTDATALEN 2048
 const unsigned char testdata[TESTDATALEN]=
 {
