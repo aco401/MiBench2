@@ -1,7 +1,8 @@
-
+#ifdef LOG_DEBUG
 void hexstring ( unsigned int d ); //printf("%08X\n");
 void hexstrings ( unsigned int d ); //printf("%08X ");
 void hexstringcr ( unsigned int d ); //printf("%08X\r");
+#endif
 
 #include <stdio.h>
 #include "picojpeg.h"
@@ -89,8 +90,10 @@ int run_test ( void )
     {
         return(1);
     }
+    #ifdef LOG_DEBUG
     printf("---- sum 0x%08X 0x%08X\n",sum,sum);
     hexstring(sum);
+    #endif
     return(0);
 }
 
