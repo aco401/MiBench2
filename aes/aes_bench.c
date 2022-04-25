@@ -33,7 +33,7 @@ int aes_bench(void)
 }
 
 
-
+#ifdef LOG_DEBUG
 // prints string as hex
 static void phex(uint8_t* str)
 {
@@ -42,6 +42,7 @@ static void phex(uint8_t* str)
         printf("%.2x", str[i]);
     printf("\n");
 }
+#endif
 
 static void test_encrypt_ecb_verbose(void)
 {
