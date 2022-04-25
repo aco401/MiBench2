@@ -9,6 +9,23 @@ returnvcflags:
     mov r0,#3
     lsl r0,#28
     bx lr
+1:
+    ;@ v clear
+    bcc 3f
+    ;@ v clear c set
+    mov r0,#2
+    lsl r0,#28
+    bx lr
+
+2:  ;@ v set   c clear
+    mov r0,#1
+    lsl r0,#28
+    bx lr
+
+3:  ;@ v clear c clear
+    mov r0,#0
+    lsl r0,#28
+    bx lr
 .thumb_func
 .globl testfun1
 testfun1:
