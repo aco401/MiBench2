@@ -1,4 +1,4 @@
-
+#ifdef LOG_DEBUG
 //------------------------------------------------------------------------
 //------------------------------------------------------------------------
 void PUT32 ( unsigned int, unsigned int);
@@ -27,12 +27,17 @@ void hexstring ( unsigned int d )
     uart_putc(0x0A);
 }
 
+#endif
+
 unsigned int abcmath ( void );
 
 //------------------------------------------------------------------------
-int main ( void )
+int randmath_bench ( void )
 {
+    #ifdef LOG_DEBUG
     hexstring(abcmath());
+    #endif
+    abcmath();
     return(0);
 }
 //------------------------------------------------------------------------
