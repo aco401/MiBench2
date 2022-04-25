@@ -47574,5 +47574,5 @@ const unsigned char jpegdata[]=
 0x13,
 0x14,
 0x15
-}
+};
 #endif
