@@ -4,7 +4,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+#ifdef LOG_DEBUG
 void PUT32 ( unsigned int, unsigned int );
+#endif
 
 #define CPSR_C (1<<29)
 #define CPSR_V (1<<28)
@@ -15,30 +17,38 @@ unsigned int testfun2 ( unsigned int, unsigned int );
 unsigned int testfun3 ( unsigned int, unsigned int );
 unsigned int testfun4 ( unsigned int, unsigned int );
 
+#ifdef LOG_DEBUG
 #define UART_BASE 0xE0000000
+#endif
 
 void add_test ( unsigned int ra, unsigned int rb )
 {
     unsigned int rc,rd;
-
+    #ifdef LOG_DEBUG
     PUT32(UART_BASE,ra);
     PUT32(UART_BASE,rb);
+    #endif
     rc=testfun1(ra,rb);
     rd=testfun2(ra,rb);
+    #ifdef LOG_DEBUG
     PUT32(UART_BASE,rc&0x30000000);
     PUT32(UART_BASE,rd&0x30000000);
+    #endif
 }
 
 void sub_test ( unsigned int ra, unsigned int rb )
 {
     unsigned int rc,rd;
-
+    #ifdef LOG_DEBUG
     PUT32(UART_BASE,ra);
     PUT32(UART_BASE,rb);
+    #endif
     rc=testfun3(ra,rb);
     rd=testfun4(ra,rb);
+    #ifdef LOG_DEBUG
     PUT32(UART_BASE,rc&0x30000000);
     PUT32(UART_BASE,rd&0x30000000);
+    #endif
 }
 
 int vcflags_bench ( void )
