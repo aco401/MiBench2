@@ -10,7 +10,9 @@ unsigned int LSR_FLAG ( unsigned int rd, unsigned int rs );
 unsigned int LSL ( unsigned int rd, unsigned int rs );
 unsigned int LSL_FLAG ( unsigned int rd, unsigned int rs );
 
+#ifdef LOG_DEBUG
 void hexstring ( unsigned int d );
+#endif
 
 //------------------------------------------------------------------------
 unsigned int prand32 ( unsigned int x )
@@ -67,8 +69,9 @@ int regression ( void )
         rc=LSL_FLAG(prand,rb);
         sum+=rc;
     }
-
+    #ifdef LOG_DEBUG
     hexstring(sum);
+    #endif
     return(0);
 }
 //------------------------------------------------------------------------

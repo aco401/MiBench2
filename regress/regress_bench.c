@@ -1,12 +1,14 @@
 #include "../bareBench.h"
 
+#ifdef LOG_DEBUG
 //------------------------------------------------------------------------
 //------------------------------------------------------------------------
 void PUT32 ( unsigned int, unsigned int);
+#endif
 
 
 int regression ( void );
-
+#ifdef LOG_DEBUG
 
 #define THUL_UART_BASE 0xE0000000
 //------------------------------------------------------------------------
@@ -33,8 +35,9 @@ void hexstring ( unsigned int d )
     uart_putc(0x0D);
     uart_putc(0x0A);
 }
+#endif
 //------------------------------------------------------------------------
-int main ( void )
+int regress_bench ( void )
 {
     regression();
     return(0);
