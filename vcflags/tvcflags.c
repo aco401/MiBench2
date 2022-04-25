@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define LOG_DEBUG
+
 #ifdef LOG_DEBUG
 void PUT32 ( unsigned int, unsigned int );
 #endif
