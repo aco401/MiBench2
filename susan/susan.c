@@ -293,7 +293,11 @@ typedef float      TOTAL_TYPE; /* for my PowerPC accelerator only */
 
 /*#define FOPENB*/           /* uncomment if using djgpp gnu C for DOS or certain Win95 compilers */
 #define SEVEN_SUPP           /* size for non-max corner suppression; SEVEN_SUPP or FIVE_SUPP */
+#ifndef MIBENCH2_SUSAN_MAX_CORNERS
 #define MAX_CORNERS   150  /* max corners per frame */
+#else
+#define MAX_CORNERS MIBENCH2_SUSAN_MAX_CORNERS
+#endif
 
 /* ********** Leave the rest - but you may need to remove one or both of sys/file.h and malloc.h lines */
 
