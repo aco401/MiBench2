@@ -2004,7 +2004,7 @@ CORNER_LIST corner_list;;
   {
     case 0:
       /* {{{ smoothing */
-      #ifdef BENCH_VERBOSE
+      #ifdef LOG_DEBUG
           puts("smoothing\n");
       #endif
       setup_brightness_lut(&bp,bt,2);
@@ -2014,7 +2014,7 @@ CORNER_LIST corner_list;;
 /* }}} */
     case 1:
       /* {{{ edges */
-      #ifdef BENCH_VERBOSE
+      #ifdef LOG_DEBUG
           puts("edges\n");
       #endif
       r   = (int *) malloc(x_size * y_size * sizeof(int));
@@ -2047,7 +2047,7 @@ CORNER_LIST corner_list;;
 /* }}} */
     case 2:
       /* {{{ corners */
-      #ifdef BENCH_VERBOSE
+      #ifdef LOG_DEBUG
           puts("corners\n");
       #endif
       r   = (int *) malloc(x_size * y_size * sizeof(int));
