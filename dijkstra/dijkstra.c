@@ -2,8 +2,11 @@
 #include "../bareBench.h"
 #include "input.h"
 #include <stdio.h>
-
+#ifndef MIBENCH2_DIJKSTRA_NUM_NODES
 #define NUM_NODES                          100
+#else
+#define NUM_NODES MIBENCH2_DIJKSTRA_NUM_NODES
+#endif
 #define NONE                               9999
 
 struct _NODE {
