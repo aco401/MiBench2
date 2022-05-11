@@ -310,7 +310,7 @@ typedef float      TOTAL_TYPE; /* for my PowerPC accelerator only */
 #include "input_small.h"
 
 #ifdef MIBENCH2_SUSAN_DEBUG
-#define LOG_DEBUG LOG_LEVEL
+#define LOG_LEVEL LOG_DEBUG
 #include "log.h"
 #endif
 
