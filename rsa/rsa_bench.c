@@ -41,7 +41,7 @@
 */   
 #define KEYLEN 4
 uint16_t n[KEYLEN];
-uint16_t e[2];
+uint16_t rsa_e[2];
 uint16_t plaintext[KEYLEN];
 uint16_t ciphertext[KEYLEN];
 
@@ -637,13 +637,13 @@ void mod_exp(uint16_t * A, uint16_t * g, uint16_t * e, uint16_t e_length,
 }
 
 void test_rsa_encrypt(){
-    mod_exp(ciphertext, plaintext, e, 1, n, KEYLEN);
+    mod_exp(ciphertext, plaintext, rsa_e, 1, n, KEYLEN);
 }
 
 int rsa_bench (void) {
     /* see above comment about generating these */
     n[0] = 0xab78; n[1] = 0xafba; n[2] = 0x88e7; n[3] = 0x496d;
-    e[0] = 0x0001; e[1] = 0x0001; // e = 65537
+    rsa_e[0] = 0x0001; rsa_e[1] = 0x0001; // e = 65537
 
     plaintext[0] = 0x4d65; // Me
     plaintext[1] = 0x6d65; // me
