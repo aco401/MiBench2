@@ -381,8 +381,9 @@ char header [100];
 
   *x_size = getint();
   *y_size = getint();
-
+  #ifdef LOG_DEBUG
       printf(" %d %d\n", *x_size, *y_size);
+    #endif
       
 /* }}} */
 
@@ -397,9 +398,11 @@ void put_image(in,x_size,y_size)
   int  x_size,
        y_size;
 {
+  #ifdef LOG_DEBUG
   printf("P5\n");
   printf("%d %d\n",x_size,y_size);
   printf("255\n");
+  #endif
 }
 
 /* }}} */
