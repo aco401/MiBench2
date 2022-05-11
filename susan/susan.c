@@ -309,6 +309,11 @@ typedef float      TOTAL_TYPE; /* for my PowerPC accelerator only */
 #include "../bareBench.h"
 #include "input_small.h"
 
+#ifdef MIBENCH2_SUSAN_DEBUG
+#define LOG_DEBUG LOG_LEVEL
+#include "log.h"
+#endif
+
 int argc = 4;
 char *argv[] = {"susan", "input.pgm", "output.pgm", "-s"};
 //char *argv[] = {"susan", "input.pgm", "output.pgm", "-e"};
